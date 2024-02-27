@@ -29,6 +29,11 @@ posts = []
 members.append(Member('김범중', 'kbeom0124', '123456789'))
 members.append(Member('스파르타', 'sparta', 'asdfqwer'))
 members.append(Member('스파르탄', 'spartan', 'qwe123'))
+
+# 멤버 이름 출력
+for member in members:
+    print(member.name)
+
 # 포스트 생성
 posts.append(Post('과일', '사과, 배, 딸기', 'kbeom0124'))
 posts.append(Post('맛있는 과일', '사과, 토마토, 키위', 'kbeom0124'))
@@ -39,7 +44,6 @@ posts.append(Post('일기 예보', '오늘은 비가 올 예정입니다', 'spar
 posts.append(Post('AI 웹개발', '스파르타 내일배움 캠프', 'spartan'))
 posts.append(Post('스파르타 코딩클럽', 'AI 웹개발', 'spartan'))
 posts.append(Post('내일배움캠프', '내일배움캠프 TIL', 'spartan'))
-
 
 # 작성자 필터
 for post in posts:
