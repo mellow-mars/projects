@@ -29,6 +29,7 @@ def rock_paper_scissor():
                     return 'lose'
                 else:
                     print('이겼습니다')
+                    return 'win'
             elif player == '보':
                 if computer == '가위':
                     print('졌습니다')

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>가위바위보</h1>
+    <div>
+        <form action="{{url_for('home')}}">
+            <label for="hands">가위 바위 보 중 고르세요</label>
+            <select name="hands" id="hands">
+                <option value="바위">바위</option>
+                <option value="보">보</option>
+                <option value="가위">가위</option>
+            </select>
+            <button type="submit">실행</button>
+        </form>
+    </div>
+    <div>
+        {% if data %}
+        플레이어: {{data.0}} 컴퓨터: {{data.1}} 결과: {{data.2}}
+        {% else %}
+        실행 버튼 눌러주세요!
+        {% endif %}
+    </div>
+</body>
+
+</html>
