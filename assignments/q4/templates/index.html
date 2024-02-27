@@ -27,6 +27,29 @@
         실행 버튼 눌러주세요!
         {% endif %}
     </div>
+    <div>
+        승 : {{win}}회 | 패 : {{lose}}회 | 무승부 : {{draw}}회
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>사용자</th>
+                <th>컴퓨터</th>
+                <th>결과</th>
+            </tr>
+            {% for game in list %}
+            <tr>
+                <td>{{game.id}}</td>
+                <td>{{game.user_choice}}</td>
+                <td>{{game.computer_choice}}</td>
+                <td>{{game.result}}</td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+    </div>
 </body>
 
 </html>
