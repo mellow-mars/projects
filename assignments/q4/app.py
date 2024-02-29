@@ -24,6 +24,11 @@ class GameHistory(db.Model):
     computer_choice = db.Column(db.String, nullable=False)
     result = db.Column(db.String, nullable=False)
 
+
+with app.app_context():
+    db.create_all()
+
+
 # 가위바위보 함수, 플레이어/컴퓨터 의 손패 와 게임 결과를 반환
 
 
@@ -69,10 +74,13 @@ def home():
             user_choice=send_result[0], computer_choice=send_result[1], result=send_result[2])
         db.session.add(game)
         db.session.commit()
-        win = GameHistory.query.filter_by(result='win').count()   #데이터 베이스에 결과가 'win'인 값을 찾아서 count 
-        lose = GameHistory.query.filter_by(result='lose').count()   #데이터 베이스에 결과가 'lose'인 값을 찾아서 count
-        draw = GameHistory.query.filter_by(result='draw').count()   #데이터 베이스에 결과가 'draw'인 값을 찾아서 count
-        list = GameHistory.query.all()   #데이터 베이스에 모든 값을 리스트로 저장
+        # 데이터 베이스에 결과가 'win'인 값을 찾아서 count
+        win = GameHistory.query.filter_by(result='win').count()
+        # 데이터 베이스에 결과가 'lose'인 값을 찾아서 count
+        lose = GameHistory.query.filter_by(result='lose').count()
+        # 데이터 베이스에 결과가 'draw'인 값을 찾아서 count
+        draw = GameHistory.query.filter_by(result='draw').count()
+        list = GameHistory.query.all()  # 데이터 베이스에 모든 값을 리스트로 저장
     return render_template('index.html', data=send_result, win=win, lose=lose, draw=draw, list=list)
 
 
