@@ -1,7 +1,8 @@
 m = 123456*2
 primes = list(1 for i in range(m+1))
+primes[0]= 0
 primes[1]= 0
-for i in range(2,int(m)+1):
+for i in range(int(m)+1):
     if primes[i]:
         for j in range(2*i, int(m)+1, i):
             primes[j] = 0
