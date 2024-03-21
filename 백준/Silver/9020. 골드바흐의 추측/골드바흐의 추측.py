@@ -14,7 +14,7 @@ T = int(input())
 for test in range(T):
     n = int(input())
     half = n/2
-    for i in range(len(prime)):
+    for i in range(int(half)//2):
         if half-i in prime and half+i in prime:
             print(int(half-i), int(half+i))
             break
