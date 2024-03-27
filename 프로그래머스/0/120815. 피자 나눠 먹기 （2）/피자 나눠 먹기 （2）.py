@@ -1,4 +1,6 @@
 def solution(n):
-    for i in range(1,100):
+    i = 1
+    while True:
         if (6*i)%n == 0:
             return i
+        i += 1
