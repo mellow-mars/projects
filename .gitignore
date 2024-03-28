@@ -2,3 +2,7 @@ code_kata/
 AI/
 assignments/
 test_files/
+.venv/
+venv/
+*.db
+html_css/
